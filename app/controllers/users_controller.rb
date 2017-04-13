@@ -1,7 +1,4 @@
-class UserController < ApplicationController
-  def form
-  end
-
+class UsersController < ApplicationController
   def new
   end
 
