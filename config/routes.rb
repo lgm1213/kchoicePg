@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'session/new'
+
 # static pages
   root 'landing#home'
   get 'landing/about'
