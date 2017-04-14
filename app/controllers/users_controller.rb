@@ -63,5 +63,4 @@ before_action :set_user, only: [:show, :edit, :update, :destroy]
     @user = User.find(params[:id])
     redirect_to(root_url) unless current_user?(@user)
   end
-
 end

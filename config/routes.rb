@@ -6,17 +6,23 @@ Rails.application.routes.draw do
   get 'landing/about'
   get 'landing/contact'
   get 'landing/help'
-  get '/signup' => 'users#new'
-  post '/signup' => 'users#create'
-  post '/users/id/edit' => 'users#edit'
+ 
   
 
 
 
 # user routes
   resources :users
-  post 'users/new'
+  get '/signup' => 'users#new'
+  post '/signup' => 'users#create'
+  post '/users/id/edit' => 'users#edit'
 
+# session routes
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+  get '/logout', to: 'sessions#destroy'
+  delete '/logout', to: 'sessions#destroy'
+ 
 
 
 
