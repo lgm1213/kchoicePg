@@ -12,6 +12,7 @@ before_action :set_user, only: [:show, :edit, :update, :destroy]
   def create
     @user = User.new(user_params)
     if @user.save
+      log_in @user
       flash[:success] = "Welcome to Karol's Choice"
       redirect_to @user
     else
@@ -46,6 +47,21 @@ before_action :set_user, only: [:show, :edit, :update, :destroy]
   
   def user_params
     params.require(:user).permit(:username, :email, :password, :password_confirmation, :gender_cd)
+  end
+
+  #confirm user is logged in
+  def logged_in_user
+    unless logged_in?
+      store_location
+      flash[:danger] = "Please log in"
+      redirect_to login_url
+    end
+  end
+
+  # Confirms the correct user.
+  def correct_user
+    @user = User.find(params[:id])
+    redirect_to(root_url) unless current_user?(@user)
   end
 
 end
