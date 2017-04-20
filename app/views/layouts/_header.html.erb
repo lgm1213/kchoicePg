@@ -7,6 +7,7 @@
         <li><%= link_to "Home", root_path %></li>
         <li><%= link_to "Help", landing_help_path %></li>
         <li><%= link_to "My Account", user_path(current_user) %></li>
+        <li><%= link_to "Settings", edit_user_path(current_user) %></li>
         <li><%= link_to "Log Out", logout_path %></li>
       <% else %>
         <li><%= link_to "Home",    root_path %></li>
