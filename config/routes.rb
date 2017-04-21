@@ -7,10 +7,6 @@ Rails.application.routes.draw do
   get 'landing/contact'
   get 'landing/help'
  
-  
-
-
-
 # user routes
   resources :users
   get '/signup' => 'users#new'
@@ -23,7 +19,8 @@ Rails.application.routes.draw do
   get '/logout', to: 'sessions#destroy'
   delete '/logout', to: 'sessions#destroy'
  
-
+# account acctivation
+  resources :account_activations, only: [:edit]
 
 
 
