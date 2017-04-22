@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   before_action :admin_user, only: [:destroy]
 
   def index
-    @users = User.all
+    @users = User.where(activated: FILL_IN).paginate(page: params[:page])
   end
 
   def new
@@ -15,9 +15,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      log_in @user
-      flash[:success] = "Welcome to Karol's Choice"
-      redirect_to @user
+      @user.send_activation_email
+      flash[:success] = "Welcome to Karol's Choice. Please check your email for activate your account"
+      redirect_to root_url
     else
       render 'new'
     end
@@ -25,6 +25,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    redirect_to root_url and return unless FILL_IN
   end
 
   def edit
