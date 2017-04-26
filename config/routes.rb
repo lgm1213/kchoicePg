@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'venue/new'
+
+  get 'venue/edit'
+
+  get 'venue/index'
+
+  get 'venue/show'
+
   get 'password_resets/new'
 
   get 'password_resets/edit'
