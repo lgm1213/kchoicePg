@@ -1,17 +1,12 @@
 Rails.application.routes.draw do
-  get 'venue/new'
+  
+# venue pages
+  resources :venues
 
-  get 'venue/edit'
 
-  get 'venue/index'
-
-  get 'venue/show'
-
+# password reset
   get 'password_resets/new'
-
   get 'password_resets/edit'
-
-  get 'session/new'
 
 # static pages
   root 'landing#home'
@@ -26,6 +21,7 @@ Rails.application.routes.draw do
   post '/users/id/edit' => 'users#edit'
 
 # session routes
+  get 'session/new'
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'

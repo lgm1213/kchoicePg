@@ -1,0 +1,25 @@
+<%= form_for(@venue) do |f| %>
+  
+  <%= f.label :name %>
+  <%= f.text_field :name, class: 'form-control' %>
+  <br>
+  <%= f.label :address %>
+  <%= f.text_field :address, class: 'form-control' %>
+  <br>
+  <%= f.label :city %>
+  <%= f.text_field :city, class: 'form-control' %>
+  <br>
+  <%= f.label :state %>
+  <%= f.select :state, enum_option_pairs(Venue, :state) %>
+  <br>
+  <%= f.label :zip %>:<%= f.text_field :zip, class: 'form-control' %>
+  <br>
+  <%= f.label :phone %>
+  <%= f.text_field :phone, class: 'form-control' %>
+  <br>
+  <%= f.label :cusine %>
+  <%= f.text_field :cusine, class: 'form-control' %>
+  <br>
+  <%= f.submit yield(:button_text), class: 'btn btn-primary' %>
+<% end %>
+	
