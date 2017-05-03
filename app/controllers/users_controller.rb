@@ -7,6 +7,11 @@ class UsersController < ApplicationController
   def index
     @users = User.all
     #.paginate(page: params[:page])
+    if params[:term]
+      @users = User.search_by_full_name(params[:term])
+    else
+      @user = User.all
+    end
   end
 
   def new

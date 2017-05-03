@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  include PgSearch
   attr_accessor :remember_token, :activation_token, :reset_token
   before_save :downcase_email
   before_create :create_activation_digest
@@ -8,10 +9,16 @@ class User < ApplicationRecord
   validates :gender_cd, presence: true
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
   has_secure_password
+  pg_search_scope :search_by_full_name, against: [:username, :email]
   
   #uses simple_enu gemm
   as_enum :gender, :Female => 1, :Male => 0
   
+
+
+
+
+
   # Returns the hash digest of a given string
   def User.digest(string)
   	cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost
