@@ -10,7 +10,7 @@
   <%= f.text_field :city, class: 'form-control' %>
   <br>
   <%= f.label :state %>
-  <%= f.select :state, enum_option_pairs(Venue, :state) %>
+  <%= f.select :state, options_for_select(us_states),{}, class: 'form-control' %>
   <br>
   <%= f.label :zip %>:<%= f.text_field :zip, class: 'form-control' %>
   <br>
