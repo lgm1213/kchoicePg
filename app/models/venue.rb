@@ -5,6 +5,5 @@ validates :city, presence: true
 validates :state, presence: true
 validates :zip, presence: true, length: { maximum: 5 }
 validates :phone, presence: true, length:{ maximum: 13 }
-has_many :meals
 	
 end
