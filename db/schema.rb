@@ -43,4 +43,13 @@ ActiveRecord::Schema.define(version: 20170502150446) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "meals", force: :cascade do |t|
+    t.integer  "venue_id"
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["venue_id"], name: "index_meals_on_venue_id", using: :btree
+  end
+
 end
