@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
 # meal routes
   resources :meals
+  post 'meals/new' => 'meals#create'
 
 # venue pages
   resources :venues

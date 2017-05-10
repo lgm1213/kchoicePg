@@ -9,7 +9,7 @@ class MealsController < ApplicationController
   end
 
   def create
-    @meal = Meal.new
+    @meal = Meal.new(meal_params)
     if @meal.save
       flash[:success] = "Meal entered"
       redirect_to meals_path

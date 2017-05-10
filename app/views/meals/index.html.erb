@@ -1,12 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Users</h1>
+<h1>Meals</h1>
 
 <table class="table">
   <thead>
     <tr>
       <th>  Name   </th>
       <th>  Description  </th>
+      <th>  Venue  </th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,6 +17,7 @@
       <tr>
         <td><%= meal.name %>  </td>
         <td><%= meal.description %>  </td>
+        <td><%= meal.venue_id %>
         <td><%= link_to 'Show', meal %></td>
         <td><%= link_to 'Edit', edit_meal_path(meal) %></td>
         <td><%= link_to 'Destroy', meal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
