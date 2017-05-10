@@ -1,2 +1,17 @@
-<h1>Meal#show</h1>
-<p>Find me in app/views/meal/show.html.erb</p>
+<% provide(:title, @meal.name) %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1>
+        <%= @meal.name %>
+        <br>
+        <%= @meal.description %>
+        <br>
+        <%= @meal.venue_id %>
+      
+      </h1>
+    </section>
+  </aside>
+</div>
+
+<%= link_to "Update meal", edit_meal_path, class: 'btn btn-primary'%>

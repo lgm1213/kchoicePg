@@ -12,7 +12,7 @@ class MealsController < ApplicationController
     @meal = Meal.new
     if @meal.save
       flash[:success] = "Meal entered"
-      redirect_to meals_index
+      redirect_to meals_path
     else
       render 'new'
     end
@@ -39,7 +39,7 @@ class MealsController < ApplicationController
   def destroy
     Meal.find(params[:id]).destroy
     flash[:success] = "Meal Deleted"
-    redirect_to meals_index
+    redirect_to meals_path
   end
 
 private

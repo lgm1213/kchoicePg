@@ -6,5 +6,10 @@
   <%= f.label :description %>
   <%= f.text_area :description, class: 'form-control' %>
   <br>
+  <%= f.label :venue_id %>
+  <%= f.collection_select :venue_id, Venue.all, :id, :name, {prompt: "Which Venue?"} %>
+  <br>
+  <br>
+
   <%= f.submit yield(:button_text), class: 'btn btn-primary' %>
 <% end %>
