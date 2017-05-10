@@ -1,10 +1,7 @@
 Rails.application.routes.draw do
 
 # meal routes
-  get 'meals/index'
-  get 'meals/edit'
-  get 'meals/show'
-  get 'meals/new'
+  resources :meals
 
 # venue pages
   resources :venues
