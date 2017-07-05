@@ -57,3 +57,5 @@ gem 'hirb'
 
 # search function gem for PostGres
 gem 'pg_search'
+#erd 
+gem 'rails-erd'

@@ -47,13 +47,14 @@ class UsersController < ApplicationController
     else
       render 'edit'
     end
-
-    def destroy
-      User.find(params[:id]).destroy
-      flash[:success] = "User Deleted"
-      redirect_to users_url
-    end
   end
+
+  def destroy
+    User.find(params[:id]).destroy
+    flash[:success] = "User Deleted"
+    redirect_to users_url
+  end
+
 
   private
   # Use callbacks to share common setup or constraints between actions.

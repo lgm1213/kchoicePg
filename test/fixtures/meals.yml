@@ -1,11 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  venue: one
   name: MyString
-  description: MyText
+  venue: one
+  cuisine: MyString
+  calories: MyString
+  diet: MyString
 
 two:
-  venue: two
   name: MyString
-  description: MyText
+  venue: two
+  cuisine: MyString
+  calories: MyString
+  diet: MyString
